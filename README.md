@@ -1,1 +1,1 @@
-# Flask-Blog
+# Flask-Blog (Reader's junction)
