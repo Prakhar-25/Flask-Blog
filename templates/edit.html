@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Admin Panel</h1>
+              <span class="subheading">Manage your posts and change them</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          
+          <a href="/dashboard">  <button class="btn btn-primary"> Dashboard Home</button></a>
+          <a href="/logout">  <button class="btn btn-primary"> Logout</button></a>
+          <hr>
+          <h2>Add/Edit Post</h2>
+
+
+ <form name="sentMessage" id="contactForm" action = "/edit/{{sno}}" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Title</label>
+                <input type="text" class="form-control" placeholder="Title" id="title" name='title' required data-validation-required-message="Please enter title." value="{{post.title}}" autocomplete = "off">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Slug</label>
+                <input type="text" class="form-control" placeholder="Slug" name="slug" id="slug" required data-validation-required-message="Please enter slug." value="{{post.slug}}" autocomplete = "off">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Author</label>
+                <input type="text" class="form-control" placeholder="Author" id="auhtor" name='author' required data-validation-required-message="Please enter author name." value="{{post.auhtor}}" autocomplete = "off">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Genre</label>
+                <input type="text" class="form-control" placeholder="Genre" id="genre" name='genre' required data-validation-required-message="Please enter genre." value="{{post.genre}}" autocomplete = "off">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>First Published</label>
+                <input type="text" class="form-control" placeholder="First Published" id="first_published" name='first_published' value="{{post.first_published}}" autocomplete = "off">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>About Author</label>
+                <textarea rows="5" class="form-control" placeholder="About Author" name = "about" id="about_author">{{post.about_author}}</textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Quote</label>
+                <input type="text" class="form-control" placeholder="Quote" id="quote" name='quote' value="{{post.quote}}" autocomplete = "off">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Quoted By</label>
+                <input type="text" class="form-control" placeholder="Quoted By" id="quoed_by" name='quoted_by' value="{{post.quoted_by}}" autocomplete = "off">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Buy Link</label>
+                <input type="text" class="form-control" placeholder="Buy Link" id="buy_link" name='buy_link' value="{{post.buy_link}}" autocomplete = "off">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Content</label>
+                <textarea rows="5" class="form-control" placeholder="Content" name = "content" id="content" required data-validation-required-message="Please enter content.">{{post.content}}</textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+            </div>
+          </form>
+
+
+
+
+      
+        </div>
+      </div>
+    </div>
+    {% endblock %}

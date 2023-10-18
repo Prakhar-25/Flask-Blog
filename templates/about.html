@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/about.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>About Me</h1>
+              <span class="subheading">This is what I do.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Hello everyone !! I am Prakhar. Welcome to Reader's Junction. It is a book blog in which I share my opinions and ideas about different books I read, what I liked about the book, what it deals with, and my recommendations and ratings. These reviews are solely my personal views about the book or the author, which may differ from yours. I try to give honest reviews. I attempted my best to ensure the minimum grammatical errors in my posts yet there may be some errors left unchecked, so I apologize in advance for them. You can comment on any mistakes you find, and I will ensure to rectify them. I hope you enjoy this blog. Please share your comments.</p>
+          
+          <p>Thanks for visiting and giving your valuable time :)</p>
+          <p>Happy reading !!</p>
+        </div>
+      </div>
+    </div>
+
+   {% endblock %}

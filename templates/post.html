@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  {% set fname = 'img/' + 'post.jpg'%}
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename = fname) }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{post.title}}</h1>
+              <!-- <h2 class="subheading">{{post.tagline}}</h2> -->
+              <span class="meta">Posted by
+                <a href="#">Admin</a>
+                on {{post.date}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p class="text-center"><b>Author: </b>{{post.author}}</p>
+            <p class="text-center"><b>Genre: </b>{{post.genre}}</p>
+            {% if post.first_published %}
+            <p class="text-center"><b>First Published: </b>{{post.first_published}}</p>
+            {% endif %}
+
+            {% if post.about_author %}
+            <div class="p-3 mb-2 bg-warning text-dark">
+            <p><b>About Auhtor: </b>{{post.about_author}}</p>
+            </div>
+            {% endif %}
+
+            <p>{{post.content}}</p>
+            {% if post.quote %}
+            <p>Here is one great quote from the book: <br>
+              <i>"{{post.quote}}"</i>
+              - {{post.quoted_by}}
+            </p>
+            {% endif %}
+            {% if post.buy_link %}
+            <p>If you are interested in buying this book, here is the link: <a href = {{post.buy_link}} target = "_blank">Click Here</a></p>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+ {% endblock %}

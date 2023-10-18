@@ -1,0 +1,18 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri": "mysql+mysqlconnector://readerjunction:1234@localhost/blog",
+        "blog_name": "Reader's Junction",
+        "fb_url":"#",
+        "tw_url":"#",
+        "gh_url": "#",
+        "no._of_posts": 3,
+        "admin_user": "prakhar",
+        "admin_password": "prakhar",
+        "no_of_posts": 3,
+        "login_image": "login2.svg",
+        "gmail-user": "readerjnction25@gmail.com",
+        "gmail-password": "prakhar@20"
+    }
+}
